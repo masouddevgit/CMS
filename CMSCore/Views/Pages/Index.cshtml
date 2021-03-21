@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CMSCore.Models.Page>
+
+@{
+    ViewData["Title"] = "فهرست صفحات";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">افزودن صفحه جدید</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PageTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageShortText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageIsPublished)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageGroup)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageShortText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageIsPublished)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageGroup.PageGroupTitle)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PageID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PageID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PageID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
