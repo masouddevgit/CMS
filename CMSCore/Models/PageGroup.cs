@@ -8,7 +8,7 @@ namespace CMSCore.Models
 {
     public class PageGroup
     {
-        [Key]
+        [Key] 
         public int PageGroupID { get; set; }
         [Display(Name ="گروه صفحه")]
         [Required(ErrorMessage ="لطفا مقدار {0} را وارد کنید")]

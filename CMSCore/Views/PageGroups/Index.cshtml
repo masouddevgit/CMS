@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<CMSCore.Models.PageGroup>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "فهرست گروه صفحات";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i>ایجاد گروه صفحه</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.PageGroupTitle)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PageGroupID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PageGroupID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PageGroupID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PageGroupID" class="btn btn-info"><i class="fas fa-edit"></i>ویرایش</a>
+                <a asp-action="Details" asp-route-id="@item.PageGroupID" class="btn btn-secondary"><i class="fas fa-info-circle"></i>جزپیات</a>
+                <a asp-action="Delete" asp-route-id="@item.PageGroupID" class="btn btn-danger"><i class="fas fa-trash-alt"></i>حذف</a>
             </td>
         </tr>
 }
